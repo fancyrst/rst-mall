@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rst-agent-web/rst-agent-web.iml" filepath="$PROJECT_DIR$/rst-agent-web/rst-agent-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rst-common/rst-common.iml" filepath="$PROJECT_DIR$/rst-common/rst-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rst-common-remote/rst-common-remote.iml" filepath="$PROJECT_DIR$/rst-common-remote/rst-common-remote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rst-common-web/rst-common-web.iml" filepath="$PROJECT_DIR$/rst-common-web/rst-common-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rst-mall.iml" filepath="$PROJECT_DIR$/.idea/rst-mall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rst-mall-web/rst-mall-web.iml" filepath="$PROJECT_DIR$/rst-mall-web/rst-mall-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rst-wechat-web/rst-wechat-web.iml" filepath="$PROJECT_DIR$/rst-wechat-web/rst-wechat-web.iml" />
+    </modules>
+  </component>
+</project>

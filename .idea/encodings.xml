@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-agent-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-agent-web/config" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-common-remote" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-common-remote/src/main/java/com/rstang/remote/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common-remote/src/main/java/com/rstang/remote/entity/Dict.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common-remote/src/main/java/com/rstang/remote/entity/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-common-web/config" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common-web/src/main/java/com/rstang/support/sys" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-common/src/main/java/com" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-mall-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-mall-web/config" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/rst-wechat-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rst-wechat-web/config" charset="GBK" />
+  </component>
+</project>
