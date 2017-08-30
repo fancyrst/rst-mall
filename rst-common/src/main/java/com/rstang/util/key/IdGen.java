@@ -1,9 +1,5 @@
-package com.rstang.core.util;
+package com.rstang.util.key;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
-
-import java.io.Serializable;
 import java.security.SecureRandom;
 import java.util.UUID;
 

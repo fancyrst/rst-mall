@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="rst-wechat:war exploded">
-    <output-path>$PROJECT_DIR$/rst-wechat/target/rst-wechat-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/rst-wechat-web/target/rst-wechat-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
