@@ -15,7 +15,6 @@
         </rollingPolicy>
     </appender>
     <logger name="com.rstang" level="debug">
-        <appender-ref ref="consoleAppender" />
         <appender-ref ref="fileAppender" />
     </logger>
     <root level="info">
