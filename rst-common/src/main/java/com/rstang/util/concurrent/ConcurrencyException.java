@@ -1,6 +1,6 @@
 package com.rstang.util.concurrent;
 
-import com.pasoft.core.exception.SystemException;
+import com.rstang.core.exception.SystemException;
 
 /**
  * 并发任务异常

@@ -1,6 +1,8 @@
 package com.rstang.core.persistence.dialect;
 
 
+import org.apache.ibatis.annotations.Mapper;
+
 /**
  * DB2的分页数据库方言实现
  *

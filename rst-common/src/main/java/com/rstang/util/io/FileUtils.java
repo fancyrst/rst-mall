@@ -3,7 +3,7 @@ package com.rstang.util.io;
 import java.io.File;
 import java.io.IOException;
 
-import com.pasoft.util.validate.Assert;
+import com.rstang.util.validate.Assert;
 
 /**
  * Utility methods for working with the file system.

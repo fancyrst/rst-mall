@@ -7,12 +7,12 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.plugin.Interceptor;
 
-import com.pasoft.core.config.GlobalConfig;
-import com.pasoft.core.persistence.dialect.DB2Dialect;
-import com.pasoft.core.persistence.dialect.Dialect;
-import com.pasoft.core.persistence.dialect.MySQLDialect;
-import com.pasoft.core.persistence.dialect.OracleDialect;
-import com.pasoft.util.reflect.Reflections;
+import com.rstang.core.config.GlobalConfig;
+import com.rstang.core.persistence.dialect.DB2Dialect;
+import com.rstang.core.persistence.dialect.Dialect;
+import com.rstang.core.persistence.dialect.MySQLDialect;
+import com.rstang.core.persistence.dialect.OracleDialect;
+import com.rstang.util.reflect.Reflections;
 
 /**
  * Mybatis分页拦截器基类
@@ -41,7 +41,7 @@ public abstract class BaseInterceptor implements Interceptor, Serializable {
     /**
      * 对参数进行转换和检查
      * @param parameterObject 参数对象
-     * @param page            分页对象
+     * @param pageView            分页对象
      * @return 分页对象
      * @throws NoSuchFieldException 无法找到参数
      */

@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.lang3.StringUtils;
 
-import com.pasoft.util.reflect.Reflections;
+import com.rstang.util.reflect.Reflections;
 
 /**
  * Collections工具集.

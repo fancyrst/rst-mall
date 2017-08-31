@@ -4,7 +4,7 @@ import javax.servlet.ServletContext;
 
 import org.springframework.web.context.WebApplicationContext;
 
-import com.pasoft.core.config.GlobalConfig;
+import com.rstang.core.config.GlobalConfig;
 
 public class WebContextListener extends org.springframework.web.context.ContextLoaderListener {
 	
@@ -22,7 +22,7 @@ public class WebContextListener extends org.springframework.web.context.ContextL
 	public static boolean printKeyLoadMessage(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("\r\n======================================================================\r\n");
-		sb.append("\r\n    欢迎使用 "+GlobalConfig.getConfig("productName")+"  - Powered By SamCN");
+		sb.append("\r\n    欢迎使用 "+GlobalConfig.getConfig("productName")+"  - Powered By rstang");
 		sb.append("\r\n======================================================================\r\n");
 		System.out.println(sb.toString());
 		return true;

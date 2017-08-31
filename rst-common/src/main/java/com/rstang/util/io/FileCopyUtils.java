@@ -1,5 +1,7 @@
 package com.rstang.util.io;
 
+import com.rstang.util.validate.Assert;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -14,7 +16,6 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import com.pasoft.util.validate.Assert;
 
 /**
  * Simple utility methods for file and stream copying.

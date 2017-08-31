@@ -23,9 +23,9 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
 
-import com.pasoft.core.config.GlobalConfig;
-import com.pasoft.core.persistence.dialect.Dialect;
-import com.pasoft.util.reflect.Reflections;
+import com.rstang.core.config.GlobalConfig;
+import com.rstang.core.persistence.dialect.Dialect;
+import com.rstang.util.reflect.Reflections;
 
 /**
  * SQL工具类
@@ -148,7 +148,7 @@ public class SQLHelper {
     /**
      * 根据数据库方言，生成特定的分页sql
      * @param sql     Mapper中的Sql语句
-     * @param page    分页对象
+     * @param pageView    分页对象
      * @param dialect 方言类型
      * @return 分页SQL
      */
@@ -162,24 +162,24 @@ public class SQLHelper {
     
     /** 
      * 去除qlString的select子句。 
-     * @param hql 
+     * @param sql
      * @return 
      */  
     @SuppressWarnings("unused")
-	private static String removeSelect(String qlString){  
-        int beginPos = qlString.toLowerCase().indexOf("from");  
-        return qlString.substring(beginPos);  
+	private static String removeSelect(String sql){
+        int beginPos = sql.toLowerCase().indexOf("from");
+        return sql.substring(beginPos);
     }  
       
     /** 
      * 去除hql的orderBy子句。 
-     * @param hql 
+     * @param sql
      * @return 
      */  
     @SuppressWarnings("unused")
-	private static String removeOrders(String qlString) {  
+	private static String removeOrders(String sql) {
         Pattern p = Pattern.compile("order\\s*by[\\w|\\W|\\s|\\S]*", Pattern.CASE_INSENSITIVE);  
-        Matcher m = p.matcher(qlString);  
+        Matcher m = p.matcher(sql);
         StringBuffer sb = new StringBuffer();  
         while (m.find()) {  
             m.appendReplacement(sb, "");  

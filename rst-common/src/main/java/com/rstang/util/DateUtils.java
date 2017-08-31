@@ -6,8 +6,8 @@ import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
 
-import com.pasoft.util.validate.Assert;
-import com.pasoft.util.validate.ValidateUtils;
+import com.rstang.util.validate.Assert;
+import com.rstang.util.validate.ValidateUtils;
 
 /**
  * Utility method for handle date & time.

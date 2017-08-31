@@ -1,9 +1,11 @@
 /*
  * Copyright 2013 The EPT Team 
  * 
- * Project : EPT Platform, base on JDK1.7
+ * Project : EPT Platform, base on JDK1.8
  */
 package com.rstang.util.key;
+
+import com.rstang.util.StringUtils;
 
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
@@ -15,7 +17,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-import com.pasoft.util.StringUtils;
 
 /**
  * 编号生成工具类

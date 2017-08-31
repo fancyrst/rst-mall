@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.pasoft.core.config.GlobalConfig;
-import com.pasoft.util.CookieUtils;
+import com.rstang.core.config.GlobalConfig;
+import com.rstang.util.CookieUtils;
 
 
 
@@ -293,7 +293,7 @@ public class PageView<T> {
 	
 	/**
 	 * 设置本页数据对象列表
-	 * @param list
+	 * @param records
 	 */
 	public PageView<T> setList(List<T> records) {
 		this.records = records;
