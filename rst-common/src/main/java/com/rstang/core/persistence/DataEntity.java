@@ -2,7 +2,9 @@ package com.rstang.core.persistence;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.rstang.remote.entity.User;
+import com.rstang.common.entity.User;
+import com.rstang.util.key.IdGen;
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.Date;
@@ -34,7 +36,17 @@ public class DataEntity<T> extends BaseEntity<T> {
      */
     @Override
     public void preInsert(){
-
+        // 不限制ID为UUID，调用setIsNewRecord()使用自定义ID
+        if (!this.isNewRecord){
+            setId(IdGen.uuid());
+        }
+//        User user = UserUtils.getUser();
+//        if (StringUtils.isNotBlank(user.getId())){
+//            this.updateBy = user;
+//            this.createBy = user;
+//        }
+        this.updateDate = new Date();
+        this.createDate = this.updateDate;
     }
 
     /**
@@ -42,7 +54,11 @@ public class DataEntity<T> extends BaseEntity<T> {
      */
     @Override
     public void preUpdate(){
-
+//        User user = UserUtils.getUser();
+//        if (StringUtils.isNotBlank(user.getId())){
+//            this.updateBy = user;
+//        }
+        this.updateDate = new Date();
     }
 
     @Length(min=0, max=255)

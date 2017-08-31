@@ -1,5 +1,6 @@
 package com.rstang.core.service;
 
+import com.rstang.core.page.PageView;
 import com.rstang.core.persistence.CrudDao;
 import com.rstang.core.persistence.DataEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,15 +48,15 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
 
     /**
      * 查询分页数据
-     * @param page 分页对象
+     * @param pageView 分页对象
      * @param entity
      * @return
-
-    public Page<T> findPage(Page<T> page, T entity) {
-        entity.setPage(page);
-        page.setList(dao.findList(entity));
-        return page;
-    }*/
+     */
+    public PageView<T> findPage(PageView<T> pageView, T entity) {
+        entity.setPageView(pageView);
+        pageView.setList(dao.findList(entity));
+        return pageView;
+    }
 
     /**
      * 保存数据（插入或更新）

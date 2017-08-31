@@ -22,11 +22,9 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.google.common.net.HttpHeaders;
-import com.pasoft.core.config.GlobalConfig;
-import com.pasoft.sys.helper.UserHelper;
-import com.pasoft.sys.security.SystemAuthorizingRealm.Principal;
-import com.pasoft.util.Encodes;
-import com.pasoft.util.StringUtils;
+import com.rstang.core.config.GlobalConfig;
+import com.rstang.util.Encodes;
+import com.rstang.util.StringUtils;
 
 /**
  * Http与Servlet工具类
@@ -205,23 +203,7 @@ public abstract class ServletUtils {
 		String encode = userName + ":" + password;
 		return "Basic " + Encodes.encodeBase64(encode.getBytes());
 	}
-	
-	/**
-	 * 是否是Ajax异步请求
-	 * @param request
-	 */
-	public static boolean isAjaxRequest(HttpServletRequest request){
-		
-		String accept = request.getHeader("accept");
-		String xRequestedWith = request.getHeader("X-Requested-With");
-		Principal principal = UserHelper.getPrincipal();
 
-		// 如果是异步请求或是手机端，则直接返回信息
-		return ((accept != null && accept.indexOf("application/json") != -1 
-			|| (xRequestedWith != null && xRequestedWith.indexOf("XMLHttpRequest") != -1)
-			|| (principal != null && principal.isMobileLogin())));
-	}
-	
 	/**
 	 * 获取当前请求对象
 	 * @return

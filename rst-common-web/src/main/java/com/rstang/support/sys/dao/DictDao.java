@@ -8,4 +8,5 @@ import com.rstang.support.sys.entity.Dict;
  * Created by yeyx on 2017/8/30.
  */
 public interface DictDao extends CrudDao<Dict> {
+
 }

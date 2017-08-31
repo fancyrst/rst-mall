@@ -1,5 +1,6 @@
 package com.rstang.support.service;
 
+import com.rstang.common.entity.User;
 import com.rstang.support.sys.entity.Dict;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,9 +22,16 @@ public class DictServiceTest {
 
 	@Test
 	public void testInsert() throws Exception {
+		User user = new User();
+		user.setId("u1234567");
+
 		Dict dict = new Dict();
 		dict.setLabel("≤‚ ‘");
+		dict.setValue("123");
+		dict.setSort(12);
 		dict.setDescription("≤‚ ‘DESC");
+		dict.setCreateBy(user);
+		dict.setUpdateBy(user);
 		dictService.save(dict);
 
 		Assert.assertEquals(1, dictService.findList(new Dict()));

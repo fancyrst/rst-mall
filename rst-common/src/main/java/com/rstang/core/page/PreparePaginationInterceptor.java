@@ -13,7 +13,7 @@ import org.apache.ibatis.plugin.Invocation;
 import org.apache.ibatis.plugin.Plugin;
 import org.apache.ibatis.plugin.Signature;
 
-import com.pasoft.util.reflect.Reflections;
+import com.rstang.util.reflect.Reflections;
 
 /**
  * Mybatis数据库分页插件，拦截StatementHandler的prepare方法

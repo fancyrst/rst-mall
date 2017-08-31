@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.pasoft.util.reflect.Reflections;
+import com.rstang.util.reflect.Reflections;
 
 /**
  * 树形Entity基类

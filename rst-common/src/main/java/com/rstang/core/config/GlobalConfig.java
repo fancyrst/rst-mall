@@ -7,7 +7,7 @@ package com.rstang.core.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.pasoft.util.resource.PropertiesLoader;
+import com.rstang.util.resource.PropertiesLoader;
 
 /**
  * EIS global configuration

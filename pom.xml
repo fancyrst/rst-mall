@@ -38,7 +38,12 @@
             <dependency>
                 <groupId>com.rstang</groupId>
                 <artifactId>rst-common-remote</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${rst.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rstang</groupId>
+                <artifactId>rst-common</artifactId>
+                <version>${rst.version}</version>
             </dependency>
             <!-- open framework -->
             <dependency>
@@ -80,6 +85,11 @@
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring</artifactId>
                 <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>nl.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>1.2.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
