@@ -9,24 +9,25 @@ import java.util.Date;
  */
 public class User extends DataEntity<User> {
 
-    private String loginName;// µÇÂ¼Ãû
-    private String password;// ÃÜÂë
-    private String no;		// ¹¤ºÅ
-    private String name;	// ĞÕÃû
-    private String email;	// ÓÊÏä
-    private String phone;	// µç»°
-    private String mobile;	// ÊÖ»ú
-    private String userType;// ÓÃ»§ÀàĞÍ
-    private String loginIp;	// ×îºóµÇÂ½IP
-    private Date loginDate;	// ×îºóµÇÂ½ÈÕÆÚ
-    private String loginFlag;	// ÊÇ·ñÔÊĞíµÇÂ½
-    private String photo;	// Í·Ïñ
+    private String loginName;// ç™»å½•å
+    private String password;// å¯†ç 
+    private String no;		// å·¥å·
+    private String name;	// å§“å
+    private String email;	// é‚®ç®±
+    private String phone;	// ç”µè¯
+    private String mobile;	// æ‰‹æœº
+    private String userType;// ç”¨æˆ·ç±»å‹
+    private String loginIp;	// æœ€åç™»é™†IP
+    private Date loginDate;	// æœ€åç™»é™†æ—¥æœŸ
+    private String loginFlag;	// æ˜¯å¦å…è®¸ç™»é™†
+    private String photo;	// å¤´åƒ
 
-    private String oldLoginName;// Ô­µÇÂ¼Ãû
-    private String newPassword;	// ĞÂÃÜÂë
+    private String oldLoginName;// åŸç™»å½•å
+    private String newPassword;	// æ–°å¯†ç 
 
-    private String oldLoginIp;	// ÉÏ´ÎµÇÂ½IP
-    private Date oldLoginDate;	// ÉÏ´ÎµÇÂ½ÈÕÆÚ
+    private String oldLoginIp;	// ä¸Šæ¬¡ç™»é™†IP
+    private Date oldLoginDate;	// ä¸Šæ¬¡ç™»é™†æ—¥æœŸ
+
 
     public String getEmail() {
         return email;

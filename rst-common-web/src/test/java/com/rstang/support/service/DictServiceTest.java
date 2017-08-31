@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.rstang.support.service.DictService;
+import com.rstang.support.sys.service.DictService;
 
 import java.util.List;
 
@@ -26,10 +26,10 @@ public class DictServiceTest {
 		user.setId("u1234567");
 
 		Dict dict = new Dict();
-		dict.setLabel("≤‚ ‘");
+		dict.setLabel("ÂΩíÂ±ûÂÖ¨Âè∏");
 		dict.setValue("123");
 		dict.setSort(12);
-		dict.setDescription("≤‚ ‘DESC");
+		dict.setDescription("ÂΩíÂ±ûDESC");
 		dict.setCreateBy(user);
 		dict.setUpdateBy(user);
 		dictService.save(dict);

@@ -1,4 +1,4 @@
-package com.rstang.support.service;
+package com.rstang.support.sys.service;
 
 import com.rstang.core.service.CrudService;
 import com.rstang.support.sys.dao.DictDao;

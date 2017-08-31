@@ -38,7 +38,12 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>${env}</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 	</build>
-
 
 </project>

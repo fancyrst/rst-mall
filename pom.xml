@@ -109,7 +109,10 @@
             <id>dev</id>
             <properties>
                 <env>config/dev</env>
-                <webWarName>rst-mall-web</webWarName>
+                <webWarName>rst-common-web</webWarName>
+                <mall-webWarName>rst-mall-web</mall-webWarName>
+                <wechat-webWarName>rst-wechat-web</wechat-webWarName>
+                <agent-webWarName>rst-agent-web</agent-webWarName>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -119,7 +122,10 @@
             <id>test</id>
             <properties>
                 <env>config/test</env>
-                <webWarName>rst-mall-web</webWarName>
+                <webWarName>rst-common-web</webWarName>
+                <mall-webWarName>rst-mall-web</mall-webWarName>
+                <wechat-webWarName>rst-wechat-web</wechat-webWarName>
+                <agent-webWarName>rst-agent-web</agent-webWarName>
             </properties>
         </profile>
         <profile>
@@ -127,6 +133,10 @@
             <properties>
                 <env>config/prod</env>
                 <webWarName>rst-mall-web</webWarName>
+                <webWarName>rst-common-web</webWarName>
+                <mall-webWarName>rst-mall-web</mall-webWarName>
+                <wechat-webWarName>rst-wechat-web</wechat-webWarName>
+                <agent-webWarName>rst-agent-web</agent-webWarName>
             </properties>
         </profile>
     </profiles>
