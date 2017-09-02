@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="rst-common:war">
-    <output-path>$PROJECT_DIR$/rst-common/target</output-path>
-    <root id="archive" name="rst-common-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="rst-common:war exploded" />
-    </root>
-  </artifact>
-</component>
