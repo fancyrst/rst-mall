@@ -132,7 +132,6 @@
             <id>prod</id>
             <properties>
                 <env>config/prod</env>
-                <webWarName>rst-mall-web</webWarName>
                 <webWarName>rst-common-web</webWarName>
                 <mall-webWarName>rst-mall-web</mall-webWarName>
                 <wechat-webWarName>rst-wechat-web</wechat-webWarName>

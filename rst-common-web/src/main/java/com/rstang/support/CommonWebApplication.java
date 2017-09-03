@@ -2,13 +2,15 @@ package com.rstang.support;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource({"common-context.properties"})
-public class RstCommonWebApplication {
+@ComponentScan(basePackages = "com.rstang")
+@PropertySource({"classpath:common-context.properties"})
+public class CommonWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RstCommonWebApplication.class, args);
+		SpringApplication.run(CommonWebApplication.class, args);
 	}
 }

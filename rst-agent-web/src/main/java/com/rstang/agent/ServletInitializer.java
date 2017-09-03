@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(RstAgentWebApplication.class);
+		return application.sources(AgentApplication.class);
 	}
 
 }
