@@ -10,7 +10,7 @@ import java.util.Map;
 import com.rstang.util.resource.PropertiesLoader;
 
 /**
- * EIS global configuration
+ * rstang global configuration
  * @author yexiong
  *
  */
@@ -29,7 +29,7 @@ public class GlobalConfig {
 	/**
 	 * 属性文件加载对象
 	 */
-	private static PropertiesLoader propertiesLoader = new PropertiesLoader("global_context.properties");
+	private static PropertiesLoader propertiesLoader = new PropertiesLoader("common-context.properties");
 	
 	/**
 	 * 获取配置

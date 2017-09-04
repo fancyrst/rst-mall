@@ -14,13 +14,13 @@ import java.util.List;
 @Transactional(readOnly = true)
 public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>> {
     /**
-     * ³Ö¾Ã²ã¶ÔÏó
+     * æŒä¹…å±‚å¯¹è±¡
      */
     @Autowired
     protected D dao;
 
     /**
-     * »ñÈ¡µ¥ÌõÊı¾İ
+     * è·å–å•æ¡æ•°æ®
      * @param id
      * @return
      */
@@ -29,7 +29,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     }
 
     /**
-     * »ñÈ¡µ¥ÌõÊı¾İ
+     * è·å–å•æ¡æ•°æ®
      * @param entity
      * @return
      */
@@ -38,7 +38,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     }
 
     /**
-     * ²éÑ¯ÁĞ±íÊı¾İ
+     *  æŸ¥è¯¢åˆ—è¡¨æ•°æ®
      * @param entity
      * @return
      */
@@ -47,8 +47,8 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     }
 
     /**
-     * ²éÑ¯·ÖÒ³Êı¾İ
-     * @param pageView ·ÖÒ³¶ÔÏó
+     * æŸ¥è¯¢åˆ†é¡µæ•°æ®
+     * @param pageView åˆ†é¡µå¯¹è±¡
      * @param entity
      * @return
      */
@@ -59,7 +59,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     }
 
     /**
-     * ±£´æÊı¾İ£¨²åÈë»ò¸üĞÂ£©
+     * ä¿å­˜æ•°æ®ï¼ˆæ’å…¥æˆ–æ›´æ–°ï¼‰
      * @param entity
      */
     @Transactional(readOnly = false)
@@ -74,7 +74,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     }
 
     /**
-     * É¾³ıÊı¾İ
+     * åˆ é™¤æ•°æ®
      * @param entity
      */
     @Transactional(readOnly = false)
