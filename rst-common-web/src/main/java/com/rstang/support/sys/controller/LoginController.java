@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by yeyx on 2017/9/4.
  */
-@Controller("${adminPath}")
+@Controller
 public class LoginController extends BaseController {
 
     /**
@@ -32,9 +32,9 @@ public class LoginController extends BaseController {
 
         // 如果已经登录，则跳转到管理首页
 //        if(principal != null && !principal.isMobileLogin()){
-            return "redirect:" + adminPath;
+//            return "redirect:" + adminPath;
 //        }
-//        return "modules/sys/sysLogin";
+        return "sys/sysLogin";
     }
 
 }
