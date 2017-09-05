@@ -52,6 +52,10 @@
 
 	<build>
 		<resources>
+			<!-- jsp文件资源 -->
+			<resource>
+				<directory>src/main/webapp</directory>
+			</resource>
 			<resource>
 				<directory>${env}</directory>
 				<filtering>true</filtering>
