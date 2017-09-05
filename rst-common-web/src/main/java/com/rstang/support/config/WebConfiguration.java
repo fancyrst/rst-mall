@@ -12,7 +12,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/f/img/**").addResourceLocations("e:/file");
+        registry.addResourceHandler("/f/Chrysanthemum.jpg").addResourceLocations("e:/file/Chrysanthemum.jpg");
         super.addResourceHandlers(registry);
     }
 }
