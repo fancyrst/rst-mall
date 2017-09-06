@@ -26,6 +26,7 @@ public abstract class DateUtils extends org.apache.commons.lang3.time.DateUtils 
 	
 	/** Date Pattern **/
 	public static final String DATE_YYYYMMDD = "yyyyMMdd";
+	public static final String DATE_YYYYMM = "yyyyMM";
 	public static final String DATE_YYMMDD = "yyMMdd";
 	public static final String DATE_YYYYMMDD_SLASH = "yyyy/MM/dd";
 	public static final String DATE_YYYYMMDD_HYPHEN = "yyyy-MM-dd";

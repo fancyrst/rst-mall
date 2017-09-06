@@ -1,16 +1,16 @@
-package com.rstang.common.em;
+package com.rstang.mall.em;
 
 /**
- * Created by yeyx on 2017/9/5.
+ * 经营方式
+ * Created by yeyx on 2017/9/6.
  */
-public enum AppInfo {
+public enum BusinessWay {
 
-    MALL("mall", "商城"), AGENT("agent", "代理商"), SYS("sys", "系统基础"), WECHAT("WC", "微信");
-
+    SELF("M8", "自营商品"), THREE("M6", "第三方商品");
     private String code;
     private String desc;
 
-    AppInfo(String code, String desc) {
+    BusinessWay(String code, String desc) {
         this.code = code;
         this.desc = desc;
     }

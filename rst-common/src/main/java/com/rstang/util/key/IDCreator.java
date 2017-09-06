@@ -16,21 +16,15 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.ResourceBundle;
+import java.util.concurrent.ConcurrentHashMap;
 
 
 /**
  * 编号生成工具类
- * @TODO 需增加随机数实现
- * 
+ *
  * @author yexiong 
  */
 public class IDCreator {
-	/**
-	 * 私有化构造方法
-	 */
-	private IDCreator() {
-
-	}
 
 	/**
 	 * 配置属性
@@ -43,7 +37,7 @@ public class IDCreator {
 	private static final String ID_FILE_NAME = "id-rules";
 
 	// 实例
-	private static IDCreator instance = null;
+	private static volatile IDCreator instance = null;
 
 	/**
 	 * 获取实例
@@ -51,21 +45,24 @@ public class IDCreator {
 	 * @return
 	 * @throws Exception
 	 */
-	public synchronized static IDCreator getInstance() {
+	public static IDCreator getInstance() {
 		if (null == instance) {
-			instance = new IDCreator();
-			// 初始化属性配置文件
-			ResourceBundle resource = ResourceBundle.getBundle(ID_FILE_NAME,
-					Locale.getDefault());
-			Enumeration<String> e = resource.getKeys();
-			props = new Properties();
-			while (e.hasMoreElements()) {
-				String s = e.nextElement();
-				props.setProperty(s, resource.getString(s));
+			synchronized (IDCreator.class) {
+				instance = new IDCreator();
+				// 初始化属性配置文件
+				ResourceBundle resource = ResourceBundle.getBundle(ID_FILE_NAME, Locale.getDefault());
+				Enumeration<String> e = resource.getKeys();
+				props = new Properties();
+				while (e.hasMoreElements()) {
+					String s = e.nextElement();
+					props.setProperty(s, resource.getString(s));
+				}
 			}
 		}
 		return instance;
 	}
+
+	private IDCreator() {}
 
 	/**
 	 * 上一次获取时间的毫秒数
@@ -89,15 +86,7 @@ public class IDCreator {
 	}
 
 	/**
-	 * 构建所需规则的ID序号 <br>
-	 * 
-	 * @param key
-	 * <br>
-	 * @param value
-	 * <br>
-	 * @return <br>
-	 * @throws Exception
-	 * <br>
+	 * 构建所需规则的ID序号
 	 */
 	public synchronized String getID(String key, String value) throws Exception {
 		if (null == key) {
@@ -215,7 +204,7 @@ public class IDCreator {
 		return date1.substring(beginIndex, endIndex);
 	}
 
-	private static Map<String, String> numCache = new HashMap<String, String>();
+	private static Map<String, String> numCache = new ConcurrentHashMap<>();
 
-	private static Map<String, String> dateCache = new HashMap<String, String>();
+	private static Map<String, String> dateCache = new ConcurrentHashMap<String, String>();
 }
