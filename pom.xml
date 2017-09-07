@@ -114,6 +114,7 @@
             <id>dev</id>
             <properties>
                 <env>config/dev</env>
+                <common>rst-common</common>
                 <webWarName>rst-common-web</webWarName>
                 <mall-webWarName>rst-mall-web</mall-webWarName>
                 <wechat-webWarName>rst-wechat-web</wechat-webWarName>
@@ -127,6 +128,7 @@
             <id>test</id>
             <properties>
                 <env>config/test</env>
+                <common>rst-common</common>
                 <webWarName>rst-common-web</webWarName>
                 <mall-webWarName>rst-mall-web</mall-webWarName>
                 <wechat-webWarName>rst-wechat-web</wechat-webWarName>
@@ -137,6 +139,7 @@
             <id>prod</id>
             <properties>
                 <env>config/prod</env>
+                <common>rst-common</common>
                 <webWarName>rst-common-web</webWarName>
                 <mall-webWarName>rst-mall-web</mall-webWarName>
                 <wechat-webWarName>rst-wechat-web</wechat-webWarName>
