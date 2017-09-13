@@ -3,7 +3,8 @@ package com.rstang.support.sys.dao;
 import com.rstang.core.persistence.CrudDao;
 import com.rstang.support.sys.entity.Dict;
 import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * 字典DAO接口
@@ -12,4 +13,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 public interface DictDao extends CrudDao<Dict> {
 
+    public List<String> findTypeList(Dict dict);
 }

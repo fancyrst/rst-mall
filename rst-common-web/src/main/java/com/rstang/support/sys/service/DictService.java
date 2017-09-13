@@ -21,11 +21,13 @@ public class DictService extends CrudService<DictDao, Dict> {
 	@Transactional(readOnly = false)
 	public void save(Dict dict) {
 		super.save(dict);
+
 	}
 
 	@Transactional(readOnly = false)
 	public void delete(Dict dict) {
 		super.delete(dict);
+
 	}
 
 }

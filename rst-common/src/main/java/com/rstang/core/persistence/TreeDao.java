@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * DAO支持类实现
+ * Created by yeyx on 2017/5/30.
  */
 public interface TreeDao<T extends TreeEntity<T>> extends CrudDao<T> {
 
