@@ -11,6 +11,12 @@ import org.apache.commons.lang3.StringEscapeUtils;
 
 import com.google.common.collect.Lists;
 
+/**
+ * 字符串工具类
+ * 包括：缩略字符串、html字符处理、填充
+ *
+ * @yeyx
+ */
 public abstract class StringUtils extends org.apache.commons.lang3.StringUtils {
 
 	public static String fill(String fillType, String src, String fillString,

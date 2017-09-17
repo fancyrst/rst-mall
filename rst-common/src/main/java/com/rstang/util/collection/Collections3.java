@@ -16,6 +16,7 @@ import com.rstang.util.reflect.Reflections;
  * Collections工具集.
  * 
  * 在JDK的Collections和Guava的Collections2后, 命名为Collections3.
+ *
  * Created by yeyx on 2017/01/29.
  */
 @SuppressWarnings("rawtypes")
