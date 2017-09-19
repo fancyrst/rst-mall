@@ -2,12 +2,11 @@
  * Copyright 2013 The EIS Framework Team All rights reserved.
  * EIS Team members: Zhao haiyang, Ye yaoxiong
  */
-package com.rstang.core.exception;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
+package com.rstang.util;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * 异常处理类
