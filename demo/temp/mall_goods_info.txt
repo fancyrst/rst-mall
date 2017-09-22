@@ -93,3 +93,167 @@ CREATE TABLE `circle` (
   KEY `PARENT_ID` (`PARENT_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
+CREATE TABLE `goods_express_delivery_0` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(64) DEFAULT '',
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商户编号',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店ID',
+  `goods_base_id` varchar(64) DEFAULT '' COMMENT '商品基础ID',
+  `delivery_type` int(2) DEFAULT '1' COMMENT '商品配送方式(1:快递配送，2：用户到店，3：商家配送, 4:系统配送)',
+  `is_free` tinyint(1) DEFAULT '0' COMMENT '是否包邮',
+  `freight_template_id` varchar(64) DEFAULT NULL COMMENT '运费模板编号',
+  `area_template_id` varchar(64) DEFAULT NULL COMMENT '区域模板编号',
+  `merchant_delivery_time_id` varchar(64) DEFAULT NULL COMMENT '配送时间对象',
+  `weight` int(10) DEFAULT '0' COMMENT '重量(单位：克)',
+  `is_all_store` tinyint(1) DEFAULT '0' COMMENT '是否所有门店',
+  `is_required_user_name` tinyint(1) DEFAULT '0' COMMENT '用户是否必填',
+  `is_required_phone` tinyint(1) DEFAULT '0' COMMENT '电话是否必填',
+  `is_default_time` int(1) DEFAULT NULL COMMENT '配送时间模板 0=使用模板，模板是默认的 1=使用模板，模板不是默认的，2=自定义',
+  `store_ids` text COMMENT '选择指定的门店',
+  PRIMARY KEY (`auto_id`),
+  KEY `goods_express_delivery_id` (`id`) USING BTREE,
+  KEY `idx_goods_express_delivery_goods_id` (`goods_base_id`) USING BTREE,
+  KEY `idx_goods_express_delivery_shop_id_store_id` (`shop_id`,`store_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品配送表'
+
+
+CREATE TABLE `goods_flow` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(64) DEFAULT '',
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商家ID',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店ID',
+  `sync_id` varchar(64) DEFAULT '' COMMENT '原始商品ID',
+  `goods_id` varchar(64) DEFAULT '' COMMENT '商品ID',
+  `pv` int(20) DEFAULT '0' COMMENT '商品pv',
+  `uv` int(20) DEFAULT '0' COMMENT '商品uv',
+  `priPv` int(20) DEFAULT '0' COMMENT '原始商品pv',
+  `priUv` int(20) unsigned DEFAULT '0' COMMENT '原始商品uv',
+  `edit_time` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`auto_id`),
+  KEY `goods_flow_id` (`id`) USING BTREE,
+  KEY `idx_goods_flow_goods_id` (`goods_id`) USING BTREE,
+  KEY `idx_goods_flow_store_id` (`store_id`) USING BTREE,
+  KEY `idx_goods_flow_store_id_sync_id` (`store_id`,`sync_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COMMENT='商品数据流量表'
+
+CREATE TABLE `goods_pic` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商品编号',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店ID',
+  `goods_id` varchar(64) DEFAULT '' COMMENT '商品ID',
+  `sort_no` int(4) DEFAULT '0' COMMENT '排序号',
+  `goods_pic` varchar(128) DEFAULT NULL COMMENT '商品图片',
+  PRIMARY KEY (`id`),
+  KEY `idx_goods_pic_id` (`id`) USING BTREE,
+  KEY `idx_goods_pic_goods_id` (`goods_id`) USING BTREE,
+  KEY `idx_goods_pic_shop_id_store_id` (`shop_id`,`store_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COMMENT='商品图片表
+
+
+CREATE TABLE `goods_sku` (
+  `id` varchar(64) NOT NULL COMMENT '主键编号',
+  `sku_id` varchar(64) NOT NULL DEFAULT '' COMMENT 'sku编号',
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商家编号',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店编号',
+  `parent_sku_id` varchar(64) DEFAULT NULL COMMENT '上级SKU_id',
+  `goods_id` varchar(64) DEFAULT NULL COMMENT '商品ID',
+  `selfuilt` tinyint(1) DEFAULT '1' COMMENT ' 自建商品sku(0:否，1:是)',
+  `stock` int(11) DEFAULT '0' COMMENT 'sku库存数量',
+  `pic_url` varchar(128) DEFAULT NULL COMMENT '图片',
+  `shelf_no` varchar(64) DEFAULT NULL COMMENT '货号',
+  `sort_no` int(8) DEFAULT '0' COMMENT '排序号',
+  `sale_price` int(12) DEFAULT '0' COMMENT '销售价',
+  `market_price` int(12) DEFAULT '0' COMMENT '市场价',
+  `worth` int(12) DEFAULT '0' COMMENT '面值',
+  `edit_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `create_time` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `sku_store_id` (`sku_id`,`store_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='门店sku库存表'
+
+CREATE TABLE `goods_sku_attribute` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(64) DEFAULT '',
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商家编号',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店ID',
+  `goods_id` varchar(64) DEFAULT '' COMMENT '商品编号',
+  `sku_id` varchar(64) DEFAULT '' COMMENT 'sku编号ID',
+  `attribute_id` varchar(64) DEFAULT NULL COMMENT '属性编号',
+  `attribute_value` varchar(64) DEFAULT NULL COMMENT '属性值',
+  `parent_attribute_id` varchar(64) DEFAULT NULL COMMENT '上级属性编号',
+  `attribute_level` int(2) DEFAULT '1' COMMENT '属性级别',
+  `option_id` varchar(64) DEFAULT NULL COMMENT '选项编号',
+  `option_value` varchar(64) DEFAULT NULL COMMENT '选项值',
+  `selfuilt` tinyint(1) DEFAULT '0' COMMENT '自建商品sku(0:否，1:是)',
+  `stock` int(8) DEFAULT NULL COMMENT '库存',
+  `sort_no` int(4) DEFAULT '0' COMMENT '排序号',
+  `edit_time` datetime DEFAULT NULL COMMENT '编辑时间',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`auto_id`),
+  KEY `idx_goods_sku_attribute_id` (`id`) USING BTREE,
+  KEY `idx_goods_sku_attribute_sku_id` (`sku_id`) USING BTREE,
+  KEY `idx_goods_sku_attribute_shop_id_store_id` (`shop_id`,`store_id`) USING BTREE,
+  KEY `idx_goods_sku_attribute_goods_id` (`goods_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品SKU表'
+
+CREATE TABLE `goods_stock_deduction_record` (
+  `auto_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` varchar(64) DEFAULT '',
+  `shop_id` varchar(64) DEFAULT '' COMMENT '商家编号',
+  `store_id` varchar(64) DEFAULT '' COMMENT '门店ID',
+  `out_trade_no` varchar(64) DEFAULT '' COMMENT '订单号',
+  `hy_user_Id` varchar(64) DEFAULT '' COMMENT '华阳用户编号',
+  `goods_id` varchar(64) DEFAULT '' COMMENT '商品编号',
+  `sku_id` varchar(64) DEFAULT '',
+  `sale_price` int(10) DEFAULT NULL COMMENT '销售价格',
+  `stock` int(8) DEFAULT NULL COMMENT '库存',
+  `status` int(2) DEFAULT NULL COMMENT '订单状态:0=未付款;1=已取消(商家删除);2=未发货;3=已发货;4=已签收;5=已取消(用户删除); 6=等待商家同意退款;7=等待买家退货;8=等待商家收货9=退款成功;10=超时取消;11=已付定金',
+  `trade_status` tinyint(1) DEFAULT NULL COMMENT '交易状态，1:下单成功，0，失败(取消订单，或者退单)',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`auto_id`),
+  KEY `idx_goods_stock_deduction_record_id` (`id`) USING BTREE,
+  KEY `idx_goods_stock_deduction_record_out_trade_no` (`out_trade_no`) USING BTREE,
+  KEY `idx_goods_stock_deduction_record_hy_user_Id` (`hy_user_Id`) USING BTREE,
+  KEY `idx_goods_stock_deduction_record_goods_id` (`goods_id`) USING BTREE,
+  KEY `idx_goods_stock_deduction_record_sku_id` (`sku_id`) USING BTREE,
+  KEY `idx_goods_stock_deduction_record_shop_id` (`shop_id`,`store_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品销售表'
+
+CREATE TABLE `merchant_delivery` (
+  `auto_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+  `id` varchar(64) NOT NULL COMMENT 'uuid',
+  `shop_id` varchar(64) NOT NULL COMMENT '商家id',
+  `store_id` varchar(64) NOT NULL COMMENT '门店id',
+  `type` int(1) NOT NULL DEFAULT '0' COMMENT '类型(0:商家配送时间配置   1:用户到店时间配置)',
+  `is_default_time` int(1) NOT NULL DEFAULT '0' COMMENT '是否使用默认时间(2:自定义模板  1:是   0:否)',
+  `delivery_type` int(2) NOT NULL DEFAULT '0' COMMENT '配送类型(0:默认配送时间 1:购买X日起X天内有效，2：购买X日起XX日期有效3:起始日期有效)',
+  `day_no` int(4) DEFAULT '0' COMMENT '从第几日起',
+  `day_count` int(4) DEFAULT '0' COMMENT '有效天数',
+  `day_date` varchar(20) DEFAULT NULL COMMENT '有效日期',
+  `begin_date` varchar(20) DEFAULT NULL COMMENT '开始日期',
+  `end_date` varchar(20) DEFAULT NULL COMMENT '结束日期',
+  `buy_time` varchar(20) DEFAULT NULL COMMENT '购买时间后，延至第二天配送',
+  `time_section` text COMMENT '可配送时间段(beginTime，endTime|beginTime，endTime)',
+  `edit_time` datetime DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`auto_id`),
+  KEY `idx_shop_id` (`shop_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `offers_goods_sku_0` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `activity_base_id` varchar(64) NOT NULL DEFAULT '' COMMENT '活动BseID',
+  `goods_id` varchar(64) DEFAULT NULL COMMENT '商品ID',
+  `origina_price` bigint(20) DEFAULT NULL COMMENT '原价,单位为分',
+  `discount_price` bigint(20) DEFAULT NULL COMMENT '折扣价（分）',
+  `discount_value` double DEFAULT NULL COMMENT '折扣值',
+  `rep_num` int(11) DEFAULT NULL COMMENT '总库存',
+  `quota_num` int(11) DEFAULT NULL COMMENT '商品限购数量',
+  `sold_num` int(11) DEFAULT NULL COMMENT '已售出数量',
+  `offers_goods_base_id` varchar(64) DEFAULT NULL COMMENT '关联offers_goods的offers_goods_base_id',
+  `sku_id` varchar(64) NOT NULL COMMENT '商品skuId',
+  `source_sku_id` varchar(64) NOT NULL COMMENT 'sku来源id',
+  PRIMARY KEY (`id`),
+  KEY `offers_goods_sku_offers_goods_base_id` (`offers_goods_base_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='限时特价商品SKU记录
