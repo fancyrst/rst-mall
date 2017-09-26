@@ -1,0 +1,3 @@
+商城接入微信所有java类放在此package下
+1. 需要一个公共的Controller基类
+2. 需要一个拦截器做微信授权，获取openid
