@@ -8,7 +8,7 @@ import java.security.SecureRandom;
 
 import org.apache.commons.lang3.Validate;
 
-import com.rstang.core.exception.ExceptionHandler;
+import com.rstang.util.ExceptionHandler;
 
 /**
  * 支持SHA-1/MD5消息摘要的工具类.
