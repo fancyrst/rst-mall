@@ -12,7 +12,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import com.rstang.core.exception.ExceptionHandler;
+import com.rstang.util.ExceptionHandler;
 import com.rstang.util.Encodes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
