@@ -43,10 +43,35 @@
 	<build>
 		<resources>
 			<resource>
+				<directory>${env}</directory>
+				<filtering>true</filtering>
+			</resource>
+
+			<resource>
 				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.p12</include>
+					<include>**/*.crt</include>
+					<include>**/*.xlsx</include>
+				</includes>
+				<filtering>false</filtering>
 			</resource>
 			<resource>
-				<directory>${env}</directory>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.yml</include>
+					<include>**/*.yaml</include>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+					<include>**/*.txt</include>
+				</includes>
 				<filtering>true</filtering>
 			</resource>
 		</resources>
