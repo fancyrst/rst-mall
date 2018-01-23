@@ -18,12 +18,14 @@ import java.util.List;
 public class DictService extends CrudService<DictDao, Dict> {
 	
 
+	@Override
 	@Transactional(readOnly = false)
 	public void save(Dict dict) {
 		super.save(dict);
 
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void delete(Dict dict) {
 		super.delete(dict);

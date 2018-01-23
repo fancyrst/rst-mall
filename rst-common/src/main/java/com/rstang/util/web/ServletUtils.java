@@ -37,10 +37,10 @@ public abstract class ServletUtils {
 	public static final long ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 	
 	// 静态文件后缀
-	private final static String[] staticFiles = StringUtils.split(GlobalConfig.getConfig("web.staticFile"), ",");
+	private final static String[] STATIC_FILES = StringUtils.split(GlobalConfig.getConfig("web.staticFile"), ",");
 	
 	// 动态映射URL后缀
-	private final static String urlSuffix = GlobalConfig.getUrlSuffix();
+	private final static String URL_SUFFIX = GlobalConfig.getUrlSuffix();
 
 	/**
 	 * 设置客户端缓存过期时间 的Header.
@@ -79,9 +79,9 @@ public abstract class ServletUtils {
 
 	/**
 	 * 根据浏览器If-Modified-Since Header, 计算文件是否已被修改.
-	 * 
+	 *
 	 * 如果无修改, checkIfModify返回false ,设置304 not modify status.
-	 * 
+	 *
 	 * @param lastModified 内容的最后修改时间.
 	 */
 	public static boolean checkIfModifiedSince(HttpServletRequest request, HttpServletResponse response,
@@ -96,9 +96,9 @@ public abstract class ServletUtils {
 
 	/**
 	 * 根据浏览器 If-None-Match Header, 计算Etag是否已无效.
-	 * 
+	 *
 	 * 如果Etag有效, checkIfNoneMatch返回false, 设置304 not modify status.
-	 * 
+	 *
 	 * @param etag 内容的ETag.
 	 */
 	public static boolean checkIfNoneMatchEtag(HttpServletRequest request, HttpServletResponse response, String etag) {
@@ -129,7 +129,7 @@ public abstract class ServletUtils {
 
 	/**
 	 * 设置让浏览器弹出下载对话框的Header.
-	 * 
+	 *
 	 * @param fileName 下载后的文件名.
 	 */
 	public static void setFileDownloadHeader(HttpServletResponse response, String fileName) {
@@ -144,7 +144,7 @@ public abstract class ServletUtils {
 
 	/**
 	 * 取得带相同前缀的Request Parameters, copy from spring WebUtils.
-	 * 
+	 *
 	 * 返回的结果的Parameter名已去除前缀.
 	 */
 	@SuppressWarnings("rawtypes")
@@ -176,7 +176,7 @@ public abstract class ServletUtils {
 
 	/**
 	 * 组合Parameters生成Query String的Parameter部分,并在paramter name上加上prefix.
-	 * 
+	 *
 	 */
 	public static String encodeParameterStringWithPrefix(Map<String, Object> params, String prefix) {
 		StringBuilder queryStringBuilder = new StringBuilder();
@@ -218,10 +218,10 @@ public abstract class ServletUtils {
 
 	/**
      * 判断访问URI是否是静态文件请求
-	 * @throws Exception 
+	 * @throws Exception
      */
     public static boolean isStaticFile(String uri){
-		if (staticFiles == null){
+		if (STATIC_FILES == null){
 			try {
 				throw new Exception("检测到“app.properties”中没有配置“web.staticFile”属性。配置示例：\n#静态文件后缀\n"
 					+"web.staticFile=.css,.js,.png,.jpg,.gif,.jpeg,.bmp,.ico,.swf,.psd,.htc,.crx,.xpi,.exe,.ipa,.apk");
@@ -229,11 +229,11 @@ public abstract class ServletUtils {
 				e.printStackTrace();
 			}
 		}
-//		if ((StringUtils.startsWith(uri, "/static/") || StringUtils.endsWithAny(uri, sfs)) 
+//		if ((StringUtils.startsWith(uri, "/static/") || StringUtils.endsWithAny(uri, sfs))
 //				&& !StringUtils.endsWithAny(uri, ".jsp") && !StringUtils.endsWithAny(uri, ".java")){
 //			return true;
 //		}
-		if (StringUtils.endsWithAny(uri, staticFiles) && !StringUtils.endsWithAny(uri, urlSuffix)
+		if (StringUtils.endsWithAny(uri, STATIC_FILES) && !StringUtils.endsWithAny(uri, URL_SUFFIX)
 				&& !StringUtils.endsWithAny(uri, ".jsp") && !StringUtils.endsWithAny(uri, ".java")){
 			return true;
 		}

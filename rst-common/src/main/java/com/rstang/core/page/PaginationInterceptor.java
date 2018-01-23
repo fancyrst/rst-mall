@@ -116,6 +116,7 @@ public class PaginationInterceptor extends BaseInterceptor {
             this.boundSql = boundSql;
         }
 
+        @Override
         public BoundSql getBoundSql(Object parameterObject) {
             return boundSql;
         }
