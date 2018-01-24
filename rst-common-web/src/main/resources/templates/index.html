@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <!--/*@thymesVar id="applicationName" type="java.lang.String"*/-->
+    <title th:text="${applicationName}">welcome</title>
+</head>
+<body>
+<!--/*@thymesVar id="applicationName" type="java.lang.String"*/-->
+<h3 style="text-align: center;color: darkblue" th:text="'Welcome to ' + ${applicationName}">Welcome</h3>
+<h2 style="text-align:center;color: green">i'm running...</h2>
+</body>
+</html>

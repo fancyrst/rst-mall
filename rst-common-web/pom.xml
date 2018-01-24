@@ -38,6 +38,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -52,7 +66,7 @@
 				<includes>
 					<include>**/*.p12</include>
 					<include>**/*.crt</include>
-					<include>**/*.xlsx</include>
+					<include>**/*.html</include>
 				</includes>
 				<filtering>false</filtering>
 			</resource>
