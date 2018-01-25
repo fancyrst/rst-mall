@@ -9,7 +9,6 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @ComponentScan(basePackages = "com.rstang")
 @PropertySource({"classpath:common-context.properties"})
-@MapperScan(basePackages = {"com.rstang.support.*.dao.mapper"})
 public class CommonWebApplication {
 
 	public static void main(String[] args) {
